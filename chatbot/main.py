@@ -9,10 +9,11 @@ if "messages" not in st.session_state.keys():
     ]
 
 
-# display messages
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.write(message["content"])
+if "messages" in st.session_state.keys():
+    # display messages
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.write(message["content"])
 
 
 # get user input
